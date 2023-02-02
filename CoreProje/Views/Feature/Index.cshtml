@@ -1,0 +1,27 @@
+﻿@model EntityLayer.conrete.Feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "Feature", FormMethod.Post))
+
+{
+    <!--üç tane paremtre alır 1cisi :actionun simi ,2cisi controller ismi,3cüsü form methodun türü   -->
+    @Html.HiddenFor(x => x.FeatureID) <!-- id yi tutacak -->
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" }) <!-- buda inputa benzer giriş gibi-->
+    <br />
+    <label>Ad Soyad</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <label>Görev</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
+
+
